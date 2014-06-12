@@ -1,4 +1,4 @@
-var traverseDomAndCollectElements = function(startEl, matchFunc) {
+var traverseDomAndCollectElements = function(startEl, matchFunc, matchParams) {
   var resultSet = [];
   
   if (typeof startEl == "undefined") {
