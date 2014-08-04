@@ -1,7 +1,7 @@
-var traverseDomAndCollectElements = function(startEl, matchFunc, matchParams) {
+var traverseDomAndCollectElements = function(matchFunc, startEl) {
   var resultSet = [];
   
-  if (typeof startEl == "undefined") {
+  if (typeof startEl === "undefined") {
     startEl = document.body;
   }
 
@@ -16,8 +16,10 @@ var $ = function(selector) {
   var elements;
   
   // your code here
-  // your code here
-  // your code here
-  
+  //
+  // set selectorMatchFunc to a matching function
+  // depending on the type of selector you have
+
+  elements = traverseDomAndCollectElements(selectorMatchFunc);
   return elements;
 };
