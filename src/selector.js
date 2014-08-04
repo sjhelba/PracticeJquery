@@ -12,6 +12,10 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   return resultSet;
 };
 
+var matchFunctionMaker = function(selectorType) {
+  
+};
+
 var $ = function(selector) {
   var elements;
   
@@ -19,7 +23,8 @@ var $ = function(selector) {
   //
   // set selectorMatchFunc to a matching function
   // depending on the type of selector you have
-
+  var selectorMatchFunc = matchFunctionMaker(type);
+  
   elements = traverseDomAndCollectElements(selectorMatchFunc);
   return elements;
 };
