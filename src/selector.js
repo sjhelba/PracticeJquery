@@ -6,25 +6,42 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   }
 
   // your code here
-  // your code here
-  // your code here
+  // traverse the DOM tree and collect matching elements in resultSet
+  // use matchFunc to identify matching elements
 
   return resultSet;
 };
 
-var matchFunctionMaker = function(selectorType) {
-  
+
+// detect and return the type of selector
+// return one of these types: id, class, tag.class, tag
+//
+var selectorTypeMatcher = function(selector) {
+  // your code here
+};
+
+var matchFunctionMaker = function(selector) {
+  var selectorType = selectorTypeMatcher(selector);
+  var matchFunction;
+  if (selectorType === "id") {
+    // define matchFunction for id
+
+  } else if (selectorType === "class") {
+    // define matchFunction for class
+    
+  } else if (selectorType === "tag.class") {
+    // define matchFunction for tag.class
+    
+  } else if (selectorType === "tag") {
+    // define matchFunction for tag
+    
+  }
+  return matchFunction;
 };
 
 var $ = function(selector) {
   var elements;
-  
-  // your code here
-  //
-  // set selectorMatchFunc to a matching function
-  // depending on the type of selector you have
-  var selectorMatchFunc = matchFunctionMaker(type);
-  
+  var selectorMatchFunc = matchFunctionMaker(selector);
   elements = traverseDomAndCollectElements(selectorMatchFunc);
   return elements;
 };
