@@ -65,7 +65,7 @@ describe("matchFunctionMaker", function() {
     var selector = "img.thumbnail";
     var matcher = matchFunctionMaker(selector);
     var sampleDivEl = document.createElement("img");
-    sampleDivEl.class = "thumbnail"; // element has three different classes on it
+    sampleDivEl.className = "thumbnail"; // element has three different classes on it
     expect(matcher(sampleDivEl)).toEqual(true);
   });
 });
