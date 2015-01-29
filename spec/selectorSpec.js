@@ -73,6 +73,11 @@ describe("matchFunctionMaker", function() {
 describe("$ selector function", function() {
   var elements;
   
+  it("should select one element by tag name (the root el in this case)", function() {
+    elements = $('body');
+    expect(elements[0].tagName.toLowerCase()).toEqual("body");
+  });
+
   it("should select one element by id", function() {
     elements = $('#pagetitle');
     expect(elements.length).toEqual(1);
