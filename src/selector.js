@@ -20,6 +20,12 @@ var selectorTypeMatcher = function(selector) {
   // your code here
 };
 
+
+// NOTE ABOUT THE MATCH FUNCTION
+// remember, the returned matchFunction takes an *element* as a
+// parameter and returns true/false depending on if that element
+// matches the selector.
+
 var matchFunctionMaker = function(selector) {
   var selectorType = selectorTypeMatcher(selector);
   var matchFunction;
