@@ -54,6 +54,14 @@ describe("matchFunctionMaker", function() {
     expect(matcher(sampleEl)).toEqual(true);
   });
 
+  it("should return a CLASS matching function that returns FALSE if the element does not match the className", function() {
+    var selector = ".photo";
+    var matcher = matchFunctionMaker(selector);
+    var sampleEl = document.createElement("H1");
+    sampleEl.className = "photos lightback abstract"; // element has three different classes on it
+    expect(matcher(sampleEl)).toEqual(false);
+  });
+
   it("should return a TAG matching function that returns TRUE when the element matches the tagName", function() {
     var selector = 'div';
     var matcher = matchFunctionMaker(selector);
@@ -65,9 +73,26 @@ describe("matchFunctionMaker", function() {
     var selector = "img.thumbnail";
     var matcher = matchFunctionMaker(selector);
     var sampleDivEl = document.createElement("img");
-    sampleDivEl.className = "thumbnail"; // element has three different classes on it
+    sampleDivEl.className = "thumbnail lead lightback"; // element has three different classes on it
     expect(matcher(sampleDivEl)).toEqual(true);
   });
+
+  it("should return a TAG.CLASS matching function that returns FALSE if the element does not match the tag", function() {
+    var selector = "img.photo";
+    var matcher = matchFunctionMaker(selector);
+    var sampleEl = document.createElement("div");
+    sampleEl.className = "photos lightback abstract"; // element has three different classes on it
+    expect(matcher(sampleEl)).toEqual(false);
+  });
+
+  it("should return a TAG.CLASS matching function that returns FALSE if the element does not match the full className", function() {
+    var selector = "img.photo";
+    var matcher = matchFunctionMaker(selector);
+    var sampleEl = document.createElement("img");
+    sampleEl.className = "photos lightback abstract"; // element has three different classes on it
+    expect(matcher(sampleEl)).toEqual(false);
+  });
+
 });
 
 describe("$ selector function", function() {
