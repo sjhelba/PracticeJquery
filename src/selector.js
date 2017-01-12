@@ -5,7 +5,6 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
     startEl = document.body;
   }
 
-  // your code here
   // traverse the DOM tree and collect matching elements in resultSet
   // use matchFunc to identify matching elements
 
@@ -15,7 +14,7 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
 
 // detect and return the type of selector
 // return one of these types: id, class, tag.class, tag
-//
+
 var selectorTypeMatcher = function(selector) {
   // your code here
 };
