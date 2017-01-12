@@ -8,6 +8,8 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   // traverse the DOM tree and collect matching elements in resultSet
   // use matchFunc to identify matching elements
 
+  // YOUR CODE HERE
+
   return resultSet;
 };
 
