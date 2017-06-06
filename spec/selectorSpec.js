@@ -135,10 +135,14 @@ describe("$ selector function", function() {
 
 });
 
-describe("Selector Hierarchy Extra Credit", function () {
-    it("should select the correct elements when the selector includes a child ( > ) combinator", function () {
+describe("Extra Credit", function () {
+  describe("Selector Hierarchy", function (){
+    it("should select the correct elements when the selector includes a child (>) combinator", function () {
         elements = $('div > img');
         expect(elements.length).toEqual(7);
+
+        elements = $('body > img');
+        expect(elements.length).toEqual(0);
     });
 
     it("should select the correct elements when the selector includes a descendant (whitespace) combinator", function () {
@@ -148,4 +152,5 @@ describe("Selector Hierarchy Extra Credit", function () {
         elements = $('body img');
         expect(elements.length).toEqual(7);
     });
+  });
 });
