@@ -97,7 +97,7 @@ describe("matchFunctionMaker", function() {
 
 describe("$ selector function", function() {
   var elements;
-  
+
   it("should select one element by tag name (the root el in this case)", function() {
     elements = $('body');
     expect(elements[0].tagName.toLowerCase()).toEqual("body");
@@ -132,5 +132,25 @@ describe("$ selector function", function() {
     elements = $('h2.small');
     expect(elements.length).toEqual(2);
   });
-  
+
+});
+
+describe("Extra Credit", function () {
+  describe("Selector Hierarchy", function (){
+    it("should select the correct elements when the selector includes a child (>) combinator", function () {
+        elements = $('div > img');
+        expect(elements.length).toEqual(7);
+
+        elements = $('body > img');
+        expect(elements.length).toEqual(0);
+    });
+
+    it("should select the correct elements when the selector includes a descendant (whitespace) combinator", function () {
+        elements = $('body p');
+        expect(elements.length).toEqual(2);
+
+        elements = $('body img');
+        expect(elements.length).toEqual(7);
+    });
+  });
 });

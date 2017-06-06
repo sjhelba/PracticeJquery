@@ -1,6 +1,6 @@
 var traverseDomAndCollectElements = function(matchFunc, startEl) {
   var resultSet = [];
-  
+
   if (typeof startEl === "undefined") {
     startEl = document.body;
   }
@@ -35,13 +35,13 @@ var matchFunctionMaker = function(selector) {
 
   } else if (selectorType === "class") {
     // define matchFunction for class
-    
+
   } else if (selectorType === "tag.class") {
     // define matchFunction for tag.class
-    
+
   } else if (selectorType === "tag") {
     // define matchFunction for tag
-    
+
   }
   return matchFunction;
 };
