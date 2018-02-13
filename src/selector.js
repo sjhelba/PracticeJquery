@@ -67,6 +67,26 @@ var matchFunctionMaker = function(selector) {
   return matchFunction;
 };
 
+var traverseDomAndCollectElements = function(matchFunc, startEl) {
+  const start = startEl || document.body
+  let val;
+  if (matchFunc(start)) { val = [start]}
+  else { val = []}
+
+  // Base Case
+  if (!start.nextSibling) {
+    if (!start.children.length) {
+      return val
+    }
+  // Recursion
+    else {
+      return traverseDomAndCollectElements(matchFunc, start.children[0]).concat(val)
+    }
+  } else {
+      return traverseDomAndCollectElements(matchFunc, start.nextElementSibling).concat(val)
+  }
+}
+
 var $ = function(selector) {
   var elements;
   var selectorMatchFunc = matchFunctionMaker(selector);
